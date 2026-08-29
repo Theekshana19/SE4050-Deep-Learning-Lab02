@@ -1,0 +1,20 @@
+Exercise 2 — Hidden layer size experiment
+========================================
+
+Observed accuracies from NN_sample.ipynb (5000 iterations):
+
+  1 hidden unit:  67.50 %
+  2 hidden units: 67.25 %
+  3 hidden units: 90.75 %
+  4 hidden units: 90.50 %
+  5 hidden units: 91.25 %
+  20 hidden units: 90.00 %
+  50 hidden units: 90.75 %
+
+1. What happens when the number of hidden nodes increase?
+
+Accuracy is low with 1–2 hidden units (about 67%). It jumps once the network has 3 units (90.75%) and stays high for 4, 5, 20, and 50 units (about 90–91%). Increasing hidden nodes therefore improves performance up to a point; after that, extra units do not keep raising accuracy.
+
+2. Can you explain the pattern of the accuracy when the hidden nodes increase?
+
+A model with very few hidden units does not have enough capacity to fit the flower-shaped decision boundary, so accuracy stays near 67%. Around 3–5 hidden units the capacity is large enough to separate the classes, and accuracy rises to about 90–91% (best here at 5 units: 91.25%). The later values are not strictly increasing (20 units is 90.00%, slightly below 5 units). That is expected: adding hidden units increases model capacity and can improve accuracy, but the gain is not monotonic because training is non-convex and depends on initialization and optimization.
